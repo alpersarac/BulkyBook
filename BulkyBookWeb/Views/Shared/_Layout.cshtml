@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/bootswatchTheme.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BulkyBookWeb.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
     <header>
@@ -20,21 +21,13 @@
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                Home
-                                <span class="visually-hidden">(current)</span>
-                            </a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" asp-controller="Category" asp-action="Index">Category</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item dropdown">
+                       
+                        @*<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Action</a>
@@ -43,7 +36,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>
                             </div>
-                        </li>
+                        </li>*@
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-sm-2" type="search" placeholder="Search">
@@ -52,25 +45,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BulkyBookWeb</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Category" asp-action="Index">Category</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -78,7 +53,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted bg-dark">
         <div class="container">
             &copy; 2023 - BulkyBookWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
