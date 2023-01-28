@@ -1,4 +1,5 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
+using BulkyBook.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.DataAccess.Repository
 {
-    public class CoverType : Repository<CoverType>, ICoverType
+    public class CoverTypeRepository : Repository<CoverType>, ICoverTypeRepository
     {
         private ApplicationDbContext _db;
-        public CoverType(ApplicationDbContext db):base(db)
+        public CoverTypeRepository(ApplicationDbContext db):base(db)
         {
             _db = db;
         }
