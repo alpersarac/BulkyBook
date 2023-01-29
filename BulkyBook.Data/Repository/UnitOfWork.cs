@@ -1,4 +1,5 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
+using BulkyBook.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,9 @@ namespace BulkyBook.DataAccess.Repository
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
-            Category = new CategoryRepository(db);
-            CoverType= new CoverTypeRepository(db);
+            Category = new CategoryRepository(_db);
+            CoverType= new CoverTypeRepository(_db);
+            Product = new ProductRepository(_db);
         }
         public ICategoryRepository Category { get; private set; }
         public ICoverTypeRepository CoverType { get; private set; }
