@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\company.js" />
     <Content Remove="wwwroot\js\product.js" />
   </ItemGroup>
 
@@ -15,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.2">
@@ -26,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BulkyBook.Data\BulkyBook.DataAccess.csproj" />
+    <ProjectReference Include="..\BulkyBook.Utility\BulkyBook.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\company.js" />
     <None Include="wwwroot\js\product.js" />
   </ItemGroup>
 
