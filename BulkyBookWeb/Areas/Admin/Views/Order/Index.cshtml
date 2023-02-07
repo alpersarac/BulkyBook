@@ -1,0 +1,73 @@
+﻿@{
+    var status = Context.Request.Query["status"];
+    var pending = "text-primary";
+    var inprocess = "text-primary";
+    var completed = "text-primary";
+    var approved = "text-primary";
+    var all = "text-primary";
+
+    switch (status)
+    {
+        case "pending":
+            pending = "active text-white";
+            break;
+        case "inprocess":
+            inprocess = "active text-white";
+            break;
+        case "completed":
+            completed = "active text-white";
+            break;
+        case "approved":
+            approved = "active text-white";
+            break;
+        default:
+            pending = "active text-white";
+            break;
+    }
+}
+<div class="p-3">
+    <div class="d-flex justify-content-between pt-4">
+        <div class="p-2">
+            <h2 class="text-primary">Order List</h2>
+        </div>
+        <div class="p-2">
+            <ul class="list-group list-group-horizontal-sm">
+                <a style="text-decoration:none;" @inprocess asp-controller="Order" asp-action="Index" asp-route-status="inprocess"></a>
+                <li class="list-group-item">In Process</li>
+                
+                <a style="text-decoration:none;" @pending asp-controller="Order" asp-action="Index" asp-route-status="pending">
+                <li class="list-group-item">Payment Pending</li>
+                </a>
+                <a style="text-decoration:none;" @completed asp-controller="Order" asp-action="Index" asp-route-status="completed">
+                <li class="list-group-item">Completed</li>
+                </a>
+                <a style="text-decoration:none;" @approved asp-controller="Order" asp-action="Index" asp-route-status="approved">
+                <li class="list-group-item">Approved</li>
+                </a>
+                <a style="text-decoration:none;" @all asp-controller="Order" asp-action="Index" asp-route-status="all">
+                <li class="list-group-item">All</li>
+                </a>
+
+            </ul>
+        </div>
+    </div>
+    <br />
+    <table class="table table-bordered table-striped" id="tblData" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+
+    </table>
+
+</div>
+@section Scripts{
+    <script src="~/js/order.js"></script>
+}
