@@ -31,6 +31,7 @@ namespace BulkyBook.DataAccess.Repository
 		public void UpadateStripePaymentID(int id, string sessionId, string PaymentIntentId)
 		{
 			var orderFromDb = _db.OrderHeaders.FirstOrDefault(x => x.Id == id);
+            orderFromDb.PaymentDate = DateTime.Now;
             orderFromDb.SessionId = sessionId;
 			orderFromDb.PaymentIntentId = PaymentIntentId;
 
