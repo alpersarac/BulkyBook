@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace BulkyBookWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CoverTypeController : Controller
+	[Authorize(Roles = SD.Role_Admin)]
+	public class CoverTypeController : Controller
     {
         IUnitOfWork _unitOfWork;
         public CoverTypeController(IUnitOfWork unitOfWork)
